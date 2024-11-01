@@ -3,7 +3,7 @@ import logo from '../images/logo_test.jpg';
 
 const HomePage = () => {
     return(<div style={{padding:'20px'}}>
-        <h1>ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΜΑΝΗΣ «Ο ΛΕΥΚΙΠΠΟΣ»</h1>
+        <h1 style={{textAlign: "center"}}>ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΜΑΝΗΣ «Ο ΛΕΥΚΙΠΠΟΣ»</h1>
 
         <img 
         src={logo}  
