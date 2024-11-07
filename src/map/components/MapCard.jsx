@@ -18,15 +18,21 @@ const MapCard = () => {
     const [snackbarMessage, setSnackbarMessage] = React.useState('');
 
     const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text).then(() => {
-            setSnackbarMessage(`Αντιγράφηκε: ${text}`);
-            setSnackbarOpen(true);
-        }).catch(err => {
-            console.error('Σφάλμα κατά την αντιγραφή:', err);
-            setSnackbarMessage('Σφάλμα κατά την αντιγραφή');
-            setSnackbarOpen(true);
-        });
-    };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+              setSnackbarMessage(`Αντιγράφηκε: ${text}`);
+              setSnackbarOpen(true);
+          }).catch(err => {
+              console.error('Σφάλμα κατά την αντιγραφή:', err);
+              setSnackbarMessage('Σφάλμα κατά την αντιγραφή');
+              setSnackbarOpen(true);
+          });
+      } else {
+          console.warn('Η λειτουργία αντιγραφής δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης.');
+          setSnackbarMessage('Η αντιγραφή δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης.');
+          setSnackbarOpen(true);
+      }
+  };
 
     const handleCloseSnackbar = () => {
         setSnackbarOpen(false);
