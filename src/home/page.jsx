@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo_test.jpg';
+import logo from '../images/logo_final.jpg';
 
 const HomePage = () => {
     return(<div style={{padding:'20px'}}>
