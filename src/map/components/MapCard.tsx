@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import mapImage from '../../images/leukipos_map.jpg';
+// import mapImage from '../../images/leukipos_map.jpg';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Box from '@mui/material/Box';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -13,11 +13,22 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
-const MapCard = () => {
+const MapCard = ({
+  title,
+  image,
+  address,
+  phone1,
+  phone2} : {
+    title: string;
+    image:string;
+    address:string;
+    phone1:string;
+    phone2:string; }
+  ) => {
     const [snackbarOpen, setSnackbarOpen] = React.useState(false);
     const [snackbarMessage, setSnackbarMessage] = React.useState('');
 
-    const copyToClipboard = (text) => {
+    const copyToClipboard = (text:string) => {
       if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(() => {
               setSnackbarMessage(`Αντιγράφηκε: ${text}`);
@@ -44,34 +55,46 @@ const MapCard = () => {
           <CardMedia
             component="img"
             height="140"
-            image={mapImage}
+            image={image}
             alt="Χάρτης"
           />
           <CardContent sx={{width:"300px"}}>
             <Typography gutterBottom variant="h5" component="div">
-              ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΛΕΥΚΙΠΠΟΣ
+              {title}
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', color: 'text.secondary', gap: 0.5 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap:0.2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', color: 'text.secondary', gap: 0.4 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap:0.1 }}>
                     <LocationOnIcon />
                     <Typography variant="body2" ml={0.5} width={"60%"}>
-                        Ι. Παλαιολόγου 42, Καλαμάτα 241 00
+                        {address}
                     </Typography>
                     <Button 
                         size="small" 
-                        onClick={() => copyToClipboard("Ι. Παλαιολόγου 42, Καλαμάτα 241 00")}
+                        onClick={() => copyToClipboard(address)}
                         startIcon={<ContentCopyIcon />}
                     >
                     </Button>
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.1 }}>
                     <PhoneIcon />
                     <Typography variant="body2" ml={0.5} width={"60%"} >
-                        6944982331
+                        {phone1}
                     </Typography>
                     <Button 
                         size="small" 
-                        onClick={() => copyToClipboard("6944982331")}
+                        onClick={() => copyToClipboard(phone1)}
+                        startIcon={<ContentCopyIcon />}
+                    >
+                    </Button>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.1 }}>
+                    <PhoneIcon />
+                    <Typography variant="body2" ml={0.5} width={"60%"} >
+                        {phone2}
+                    </Typography>
+                    <Button 
+                        size="small" 
+                        onClick={() => copyToClipboard(phone2)}
                         startIcon={<ContentCopyIcon />}
                     >
                     </Button>
