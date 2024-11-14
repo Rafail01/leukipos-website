@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -6,12 +7,14 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import IconMap from '@mui/icons-material/Map';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router components
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CelebrationIcon from '@mui/icons-material/Celebration';
 
 // Import the page components
 import HomePage from './home/page';
 import AboutPage from './about/page'; 
 import MapPage from './map/page';
+import EventsPage from './events/page';
 
 const demoTheme = createTheme({
   cssVariables: {
@@ -48,6 +51,11 @@ function DashboardLayoutNavigationLinks(props) {
           icon: <DescriptionIcon />,
         },
         {
+          segment: 'events',
+          title: 'Events',
+          icon: <CelebrationIcon/>
+        },
+        {
           segment: 'map',
           title: 'Map',
           icon: <IconMap />,
@@ -74,6 +82,7 @@ function DashboardLayoutNavigationLinks(props) {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/map" element={<MapPage />} />
             <Route path="/" element={<HomePage />} /> {/* Default route */}
+            <Route path="/events" element={<EventsPage/>} />
           </Routes>
         </DashboardLayout>
       </Router>
