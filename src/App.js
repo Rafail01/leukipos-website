@@ -9,12 +9,14 @@ import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CelebrationIcon from '@mui/icons-material/Celebration';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 // Import the page components
 import HomePage from './home/page';
 import AboutPage from './about/page'; 
 import MapPage from './map/page';
 import EventsPage from './events/page';
+import NewsPage from './news/page';
 
 const demoTheme = createTheme({
   cssVariables: {
@@ -60,6 +62,11 @@ function DashboardLayoutNavigationLinks(props) {
           title: 'Map',
           icon: <IconMap />,
         },
+        {
+          segment: 'news',
+          title: 'News',
+          icon: <NewspaperIcon/>
+        },
       ]}
       theme={demoTheme}
       window={demoWindow}
@@ -83,6 +90,7 @@ function DashboardLayoutNavigationLinks(props) {
             <Route path="/map" element={<MapPage />} />
             <Route path="/" element={<HomePage />} /> {/* Default route */}
             <Route path="/events" element={<EventsPage/>} />
+            <Route path='/news' element={<NewsPage/>}/>
           </Routes>
         </DashboardLayout>
       </Router>
