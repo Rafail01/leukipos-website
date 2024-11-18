@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import MapCard from './components/MapCard';
 import mapImageKalamta from '../images/leukipos_map.jpg';
+import mapImageMani from '../images/leukipos_map_mani.jfif';
 
 const customIcon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
@@ -57,7 +58,7 @@ const MapPage = () => {
             ) : (
               <MapCard
                 title="ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΛΕΥΚΙΠΠΟΣ (ΜΑΝΗ)"
-                image={mapImageKalamta}
+                image={mapImageMani}
                 address="έναντι Ιερού Ναού Αγίας Τριάδας, Στούπα Δυτικής Μάνης"
                 phone1='6944982331'
                 phone2='6947144443'
