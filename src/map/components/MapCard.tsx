@@ -11,7 +11,8 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import Button from '@mui/material/Button';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+import {Alert,AlertColor} from '@mui/material';
+import { useState } from "react";
 
 const MapCard = ({
   title,
@@ -26,20 +27,24 @@ const MapCard = ({
     phone2:string; }
   ) => {
     const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+    const [severity, setSeverity] = useState("success" as AlertColor);
     const [snackbarMessage, setSnackbarMessage] = React.useState('');
 
     const copyToClipboard = (text:string) => {
       if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(() => {
+              setSeverity("success");
               setSnackbarMessage(`Αντιγράφηκε: ${text}`);
               setSnackbarOpen(true);
           }).catch(err => {
+              setSeverity("error");
               console.error('Σφάλμα κατά την αντιγραφή:', err);
               setSnackbarMessage('Σφάλμα κατά την αντιγραφή');
               setSnackbarOpen(true);
           });
       } else {
-          console.warn('Η λειτουργία αντιγραφής δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης.');
+          setSeverity("error");
+          // console.warn('Η λειτουργία αντιγραφής δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης.');
           setSnackbarMessage('Η αντιγραφή δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης.');
           setSnackbarOpen(true);
       }
