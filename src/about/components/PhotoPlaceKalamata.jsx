@@ -47,44 +47,52 @@ const PhotoPlaceKalamata = () => {
 
       
       <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="large-image-modal"
-        aria-describedby="modal showing full-sized image"
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="large-image-modal"
+      aria-describedby="modal showing full-sized image"
       >
         <Box
           sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            bgcolor: 'background.paper',
-            boxShadow: 24,
-            p: 4,
-            outline: 'none',
-          }}
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          bgcolor: 'background.paper',
+          boxShadow: 24,
+          p: 2,
+          outline: 'none',
+          width: { xs: '90%', sm: '80%', md: '60%' },
+          maxWidth: '600px',
+          maxHeight: '90vh',
+          overflowY: 'auto',
+        }}
+      >
+        <IconButton
+          onClick={handleClose}
+          sx={{
+          position: 'absolute',
+          top: 4,
+          right: 4,
+          color: 'grey.500',
+        }}
         >
-           <IconButton
-            onClick={handleClose}
-            sx={{
-              position: 'absolute',
-              top: 4,
-              right: 4,
-              color: 'grey.500'
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          {selectedImage && (
-            <img 
-              src={selectedImage} 
-              alt="Επιλεγμένη εικόνα Καλαμάτας" 
-              style={{ width: '100%', height: 'auto' }}
-            />
-          )}
-        </Box>
-      </Modal>
-    </div>
+          <CloseIcon />
+        </IconButton>
+        {selectedImage && (
+        <img
+          src={selectedImage}
+          alt="Επιλεγμένη εικόνα Καλαμάτας"
+          style={{
+          width: '100%',
+          height: 'auto', 
+        }}
+      />
+      )}
+      </Box>
+    </Modal>
+
+  </div>
   );
 };
 

@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from '../images/logo_final.jpg';
+import { Box } from '@mui/material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const HomePage = () => {
     return(<div style={{padding:'20px'}}>
@@ -17,6 +20,24 @@ const HomePage = () => {
         
         <p><strong>Πρόεδρος του συλλόγου:</strong> Ντυμένος Θεόδωρος</p>
         <p><strong>Χοροδιδάσκαλοι:</strong> Μανιμάνης Δημήτριος, Κρασσακοπούλου Δήμητρα</p>
+        <Box sx={{ width: '100%', borderRadius: '20px', textAlign: 'center' }}>
+          <a
+            href="https://www.facebook.com/dim.manimanis"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            <FacebookIcon style={{ fontSize: '40px', cursor: 'pointer'}} />
+          </a>
+          <a
+            href="https://www.instagram.com/leukipposkhoreutikos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            <InstagramIcon style={{ fontSize: '40px', cursor: 'pointer' }} />
+          </a>
+        </Box>
       </div>
     );
 }

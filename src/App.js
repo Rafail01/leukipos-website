@@ -10,6 +10,9 @@ import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+
 
 // Import the page components
 import HomePage from './home/page';

@@ -1,6 +1,8 @@
-import { Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow,useMediaQuery } from "@mui/material";
+import { Theme } from "@mui/material/styles";
 
 const NewsPage = () => {
+    const mdUp = useMediaQuery((theme:Theme) => theme.breakpoints.up('md'));
     return (
         <div style={{padding:"20px"}}>
             <Card 
@@ -22,7 +24,7 @@ const NewsPage = () => {
                     stickyHeader
                     >
                         <TableHead>
-                            <TableRow style={{textAlign: "center", color: "orange"}}>
+                            <TableRow style={{textAlign: mdUp?"center":"start", color: "orange"}}>
                                 <h2> Ανακοινώσεις</h2>
                             </TableRow>
                         </TableHead>
