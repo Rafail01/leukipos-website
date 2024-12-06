@@ -94,6 +94,7 @@ function DashboardLayoutNavigationLinks(props) {
             <Route path="/" element={<HomePage />} /> {/* Default route */}
             <Route path="/events" element={<EventsPage/>} />
             <Route path='/news' element={<NewsPage/>}/>
+            <Route path="*" element={<HomePage />} /> {/* Catch-all route */}
           </Routes>
         </DashboardLayout>
       </Router>

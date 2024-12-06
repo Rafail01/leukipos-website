@@ -30,7 +30,7 @@ const NewsPage = () => {
                         </TableHead>
                         <TableBody>
                             <TableRow>
-                                <TableCell>Ανακοίνωση 1η</TableCell>
+                                <TableCell>Ανακοινώσεις</TableCell>
                             </TableRow>
                         </TableBody>
                     </Table>
