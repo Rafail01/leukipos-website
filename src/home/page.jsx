@@ -6,7 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const HomePage = () => {
     return(<div style={{padding:'20px'}}>
-        <h1 style={{textAlign: "center"}}>ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΜΑΝΗΣ «Ο ΛΕΥΚΙΠΠΟΣ»</h1>
+        <h1 style={{textAlign: "center", color:"orange"}}>ΧΟΡΕΥΤΙΚΟΣ ΟΜΙΛΟΣ ΜΑΝΗΣ «Ο ΛΕΥΚΙΠΠΟΣ»</h1>
 
         <img 
         src={logo}  
